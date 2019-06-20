@@ -30,6 +30,7 @@ rm -rf ${projectpath}/XE
 ${projectpath}/rootfsclone.sh
 
 #################################################
+######   iE
 echo "........... build iE release UBIFS" >> ${buildpath}/log.txt
 cd ${projectpath}/XE
 ${projectpath}/XE/build-release-shrink.sh ie
@@ -38,6 +39,16 @@ echo "........... build iE release firmware" >> ${buildpath}/log.txt
 cd ${buildpath}
 ${buildpath}/buildie2.sh 
 
+######   iE 256M
+echo "........... build iE release UBIFS" >> ${buildpath}/log.txt
+cd ${projectpath}/XE
+${projectpath}/XE/build-release-shrink.sh ie256m
+
+echo "........... build iE release firmware" >> ${buildpath}/log.txt
+cd ${buildpath}
+${buildpath}/buildie2-256m.sh
+
+######   XE
 echo "........... build XE release UBIFS" >> ${buildpath}/log.txt
 cd ${projectpath}/XE
 ${projectpath}/XE/build-release-shrink.sh xe 
@@ -47,6 +58,7 @@ cd ${buildpath}
 ${buildpath}/buildxe.sh
 
 #################################################
+######   iE
 echo "........... build iE debug UBIFS" >> ${buildpath}/log.txt
 cd ${projectpath}/XE
 ${projectpath}/XE/build-debug.sh ie 
@@ -55,6 +67,16 @@ echo "........... build iE debug firmware" >> ${buildpath}/log.txt
 cd ${buildpath}
 ${buildpath}/buildie2.sh 
 
+######   iE 256M
+echo "........... build iE debug UBIFS" >> ${buildpath}/log.txt
+cd ${projectpath}/XE
+${projectpath}/XE/build-debug.sh ie256m
+
+echo "........... build iE debug firmware" >> ${buildpath}/log.txt
+cd ${buildpath}
+${buildpath}/buildie2-256m.sh
+
+######   XE
 echo "........... build XE debug UBIFS" >> ${buildpath}/log.txt
 cd ${projectpath}/XE
 ${projectpath}/XE/build-debug.sh xe 

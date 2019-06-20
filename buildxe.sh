@@ -73,9 +73,13 @@ build_and_copytoFolder ()
 	rm u-boot.img
 	rm MLO
 	#rm MTfirmware.bin
+	currentpath=`pwd`
+	rm $currentpath/*.rar
+
 	cd ${targetpath}
 	rar a $OSNAME\_$date.rar MLO MTfirmware.bin u-boot.img OS_checksum.bin
 	echo "File in $targetpath"
+	cp $OSNAME\_$date.rar $currentpath
 }
 
 ##################################################################
